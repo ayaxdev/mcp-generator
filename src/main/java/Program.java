@@ -124,7 +124,7 @@ public class Program {
     }
 
     private void decompile() throws Exception {
-        final ProcessBuilder pb = new ProcessBuilder("\"" + workingDir.toRealPath().toString() + "\\runtime\\bin\\python\\python_mcp\"", "runtime\\decompile.py", "%*");
+        final ProcessBuilder pb = new ProcessBuilder("\"" + workingDir.toRealPath() + "\\runtime\\bin\\python\\python_mcp\"", "runtime\\decompile.py", "%*");
         pb.directory(workingDir.toFile());
         pb.redirectError(ProcessBuilder.Redirect.INHERIT);
         pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
@@ -180,7 +180,8 @@ public class Program {
                     try {
                         Files.copy(path, filePath);
                     } catch (final Exception e) {
-                        Logger.error(String.format("Failed to copy library '%s'. See stacktrace for details.", fileName));
+                        System.err.printf("%s : %s%n", e.getClass().getSimpleName(), e.getMessage());
+                        System.err.printf("Failed to copy library %s%n", fileName);
                     }
                 }
             });
