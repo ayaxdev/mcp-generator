@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 public class Program {
 
-    private static final String[] VERSIONS = new String[] {"908", "918", "928", "931", "937", "940"};
+    public static final String[] VERSIONS = new String[] {"908", "918", "928", "931", "937", "940"};
 
     private final String projectNameArg;
     private final String projectGroupArg;

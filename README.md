@@ -2,7 +2,7 @@
 
 Simple tool which downloads MCP from [modcoderpack.com](http://modcoderpack.com), unpacks it, runs the decompiler, and converts it to a gradle project.
 
-### Arguments
+### Parameters
 
 ```
  -g,--group <arg>            Created project's group

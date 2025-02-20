@@ -9,7 +9,7 @@ public class Main {
         directoryArgOption.setRequired(true);
         options.addOption(directoryArgOption);
 
-        final Option versionOption = new Option("v", "version", true, "Target MCP version");
+        final Option versionOption = new Option("v", "version", true, String.format("Target MCP version (Allowed are: %s)", String.join(", ", Program.VERSIONS)));
         versionOption.setRequired(true);
         options.addOption(versionOption);
 
